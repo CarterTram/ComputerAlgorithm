@@ -20,6 +20,10 @@ public class HeapLab {
 	        int leftChild = 2 * i + 1;
 	        int rightChild = 2 * i + 2;
 	        //looks at the 3 nodes, and put the largest on top
+	        
+	        //we need leftChild< N to check if the child exist, since sometimes we can 
+	        //calculate that if a child WERE to exist, it would be index 2*i + 1, but 
+	        //we might not have it in our tree for that specific parent node.
 	        if (leftChild < N && tree.get(leftChild) > tree.get(largest)) {
 	            largest = leftChild;
 	        }
@@ -78,6 +82,7 @@ public class HeapLab {
                 ArrayList<Integer> tree = makeTree(scan);
 
                 System.out.println("\nTree Elements are:");
+                
                 for (Integer element : tree) {
                     System.out.print(element + " ");
                 }
@@ -85,6 +90,7 @@ public class HeapLab {
                 heapSort(tree);
 
                 System.out.println("\nSorted Elements (min to max):");
+                
                 for (Integer element : tree) {
                     System.out.print(element + " ");
                 }

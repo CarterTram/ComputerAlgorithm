@@ -88,13 +88,12 @@ public class HeapLab {
                 }
 
                 heapSort(tree);
-
-                System.out.println("\nSorted Elements (min to max):");
                 
-                for (Integer element : tree) {
-                    System.out.print(element + " ");
+                System.out.println("\nSorted Elements (max to min):");
+                
+                for (int i = tree.size()-1; i>=0 ;i--) {
+                	System.out.print(tree.get(i)+ " ");
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
